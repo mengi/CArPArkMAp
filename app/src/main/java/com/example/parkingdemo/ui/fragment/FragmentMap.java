@@ -8,14 +8,18 @@ import android.view.ViewGroup;
 
 import com.example.parkingdemo.R;
 
+import static com.example.parkingdemo.ui.activity.MainActivity.forceCrash;
+
 /**
  * Created by ss on 1.8.2017.
  */
 
-public class FrgmntTwo extends Fragment {
+public class FragmentMap extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_two, container, false);
+        View view =  inflater.inflate(R.layout.fragment_map, container, false);
+
+        return view;
     }
 }

@@ -12,10 +12,10 @@ import com.example.parkingdemo.R;
  * Created by ss on 1.8.2017.
  */
 
-public class FrgmntThree extends Fragment {
+public class FragmentComplain extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_three, container, false);
+        return inflater.inflate(R.layout.fragment_complain, container, false);
     }
 }

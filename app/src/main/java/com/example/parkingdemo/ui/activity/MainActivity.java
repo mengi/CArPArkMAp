@@ -9,11 +9,12 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.example.parkingdemo.R;
-import com.example.parkingdemo.ui.fragment.FrgmntOne;
-import com.example.parkingdemo.ui.fragment.FrgmntThree;
-import com.example.parkingdemo.ui.fragment.FrgmntTwo;
+import com.example.parkingdemo.ui.fragment.FragmentComplain;
+import com.example.parkingdemo.ui.fragment.FragmentMap;
+import com.example.parkingdemo.ui.fragment.FragmentMapList;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,13 +59,31 @@ public class MainActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
+
+        fab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                forceCrash();
+            }
+        });
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+    }
+
+    public static void forceCrash() {
+        throw new RuntimeException("This is a crash");
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new FrgmntOne(), "ONE");
-        adapter.addFragment(new FrgmntTwo(), "TWO");
-        adapter.addFragment(new FrgmntThree(), "THREE");
+        adapter.addFragment(new FragmentMapList(), "ONE");
+        adapter.addFragment(new FragmentComplain(), "TWO");
+        adapter.addFragment(new FragmentMap(), "THREE");
         viewPager.setAdapter(adapter);
     }
 
@@ -101,16 +120,16 @@ public class MainActivity extends AppCompatActivity {
     private void animateFab(int position) {
         switch (position) {
             case 0:
-                fab1.show();
-                fab2.hide();
-                break;
-            case 1:
                 fab2.show();
                 fab1.hide();
                 break;
-            default:
+            case 1:
                 fab1.show();
                 fab2.hide();
+                break;
+            default:
+                fab2.show();
+                fab1.hide();
                 break;
         }
     }

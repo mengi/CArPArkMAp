@@ -13,11 +13,13 @@ import com.example.parkingdemo.util.adapter.RecyclerAdapter;
 
 import java.util.ArrayList;
 
+import static com.example.parkingdemo.ui.activity.MainActivity.forceCrash;
+
 /**
  * Created by ss on 1.8.2017.
  */
 
-public class FrgmntOne extends Fragment {
+public class FragmentMapList extends Fragment {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -27,7 +29,7 @@ public class FrgmntOne extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_one, container, false);
+        View view =  inflater.inflate(R.layout.fragment_map_list, container, false);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
