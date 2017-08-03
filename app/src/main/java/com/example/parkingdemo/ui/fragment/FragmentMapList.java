@@ -14,6 +14,8 @@ import com.example.parkingdemo.util.adapter.RecyclerAdapter;
 import static com.example.parkingdemo.ui.activity.SplashActivity.carParkList;
 
 
+import static com.example.parkingdemo.ui.activity.MainActivity.forceCrash;
+
 /**
  * Created by ss on 1.8.2017.
  */

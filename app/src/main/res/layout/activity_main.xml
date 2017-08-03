@@ -50,6 +50,7 @@
             app:backgroundTint="@color/colorPrimaryDark"
             android:visibility="gone" />
 
+
 </android.support.design.widget.CoordinatorLayout>
 
 

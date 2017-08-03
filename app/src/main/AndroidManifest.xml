@@ -42,6 +42,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.MainActivity"></activity>
+        <activity android:name=".ui.activity.DetailActivity"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="be571b3ee81e390175d7d7773c0c2f170f7277c8" />
     </application>
 
 </manifest>
