@@ -12,15 +12,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.example.parkingdemo.R;
-<<<<<<< HEAD
+
 import com.example.parkingdemo.ui.fragment.FragmentMapList;
 import com.example.parkingdemo.ui.fragment.FragmentComplain;
 import com.example.parkingdemo.ui.fragment.FragmentMap;
-=======
+
 import com.example.parkingdemo.ui.fragment.FragmentComplain;
 import com.example.parkingdemo.ui.fragment.FragmentMap;
 import com.example.parkingdemo.ui.fragment.FragmentMapList;
->>>>>>> 4bc29047474c163b72f5b0777c33f3b743550d70
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,15 +87,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-<<<<<<< HEAD
         adapter.addFragment(new FragmentMapList(), "Park List");
         adapter.addFragment(new FragmentMap(), "Map");
         adapter.addFragment(new FragmentComplain(), "Complain");
-=======
-        adapter.addFragment(new FragmentMapList(), "ONE");
-        adapter.addFragment(new FragmentComplain(), "TWO");
-        adapter.addFragment(new FragmentMap(), "THREE");
->>>>>>> 4bc29047474c163b72f5b0777c33f3b743550d70
         viewPager.setAdapter(adapter);
     }
 
@@ -135,13 +129,11 @@ public class MainActivity extends AppCompatActivity {
                 fab2.show();
                 fab1.hide();
                 break;
-<<<<<<< HEAD
-            default:
-=======
+
             case 1:
                 fab1.show();
                 fab2.hide();
->>>>>>> 4bc29047474c163b72f5b0777c33f3b743550d70
+
                 break;
             default:
                 fab2.show();

@@ -25,7 +25,7 @@ import static com.example.parkingdemo.ui.activity.MainActivity.forceCrash;
  * Created by ss on 1.8.2017.
  */
 
-<<<<<<< HEAD
+
 public class FragmentMap extends Fragment implements OnMapReadyCallback {
 
     View view;
@@ -65,14 +65,5 @@ public class FragmentMap extends Fragment implements OnMapReadyCallback {
                 .findFragmentById(R.id.map);
 
         mapFragment.getMapAsync(this);
-=======
-public class FragmentMap extends Fragment {
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_map, container, false);
-
-        return view;
->>>>>>> 4bc29047474c163b72f5b0777c33f3b743550d70
     }
 }

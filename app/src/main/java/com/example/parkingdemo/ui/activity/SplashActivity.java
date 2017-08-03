@@ -9,10 +9,8 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-
-import com.crashlytics.android.ndk.CrashlyticsNdk;
 import com.example.parkingdemo.R;
-<<<<<<< HEAD
+
 import com.example.parkingdemo.model.CarPark;
 import com.example.parkingdemo.model.CarParkInfo;
 import com.example.parkingdemo.service.CarParkClient;
@@ -24,10 +22,7 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-=======
-import com.crashlytics.android.Crashlytics;
-import io.fabric.sdk.android.Fabric;
->>>>>>> 4bc29047474c163b72f5b0777c33f3b743550d70
+
 
 /**
  * Created by menginar on 02.08.2017.
@@ -44,7 +39,6 @@ public class SplashActivity extends AppCompatActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fabric.with(this, new Crashlytics(), new CrashlyticsNdk());
         setContentView(R.layout.activity_splash);
 
         view = getWindow().getDecorView().getRootView();

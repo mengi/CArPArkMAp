@@ -11,12 +11,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.parkingdemo.R;
-<<<<<<< HEAD
 import com.example.parkingdemo.model.CarPark;
-=======
+
 import com.example.parkingdemo.ui.activity.DetailActivity;
 import com.example.parkingdemo.ui.activity.MainActivity;
->>>>>>> 4bc29047474c163b72f5b0777c33f3b743550d70
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,14 +79,9 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     }
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-<<<<<<< HEAD
+
         holder.cardTitle.setText(carParkArrayList.get(position).getCarparkingname());
         holder.cardText.setText(carParkArrayList.get(position).getCapacity());
-=======
-        holder.cardTitle.setText(mDataset.get(position));
-        holder.cardText.setText(mDataset.get(position));
-
->>>>>>> 4bc29047474c163b72f5b0777c33f3b743550d70
     }
 
     @Override

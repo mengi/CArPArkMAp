@@ -24,7 +24,7 @@ import retrofit2.Response;
  */
 
 public class FragmentComplain extends Fragment {
-<<<<<<< HEAD
+
 
     private EditText nameEditText, emailEditText, titleEditText, messageEditText;
     private Button sendMessageButton;
@@ -123,11 +123,5 @@ public class FragmentComplain extends Fragment {
         } catch (Exception e) {
             Snackbar.make(getView(), "Connection Failed With Server", Snackbar.LENGTH_SHORT).show();
         }
-=======
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_complain, container, false);
->>>>>>> 4bc29047474c163b72f5b0777c33f3b743550d70
     }
 }
