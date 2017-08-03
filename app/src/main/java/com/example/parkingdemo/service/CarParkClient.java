@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class CarParkClient {
 
-    public static String BASE_URL = "http://192.168.1.187/gpscarpark/";
+    public static String BASE_URL = "http://192.168.1.130/gpscarpark/";
 
     public static Retrofit getRetrofitInstance() {
         return new Retrofit.Builder()

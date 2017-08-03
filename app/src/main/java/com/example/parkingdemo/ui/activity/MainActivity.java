@@ -11,9 +11,9 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
 import com.example.parkingdemo.R;
-import com.example.parkingdemo.ui.fragment.FrgmntOne;
-import com.example.parkingdemo.ui.fragment.FrgmntThree;
-import com.example.parkingdemo.ui.fragment.FrgmntTwo;
+import com.example.parkingdemo.ui.fragment.FragmentMapList;
+import com.example.parkingdemo.ui.fragment.FragmentComplain;
+import com.example.parkingdemo.ui.fragment.FragmentMap;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -62,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new FrgmntOne(), "ONE");
-        adapter.addFragment(new FrgmntTwo(), "TWO");
-        adapter.addFragment(new FrgmntThree(), "THREE");
+        adapter.addFragment(new FragmentMapList(), "Park List");
+        adapter.addFragment(new FragmentMap(), "Map");
+        adapter.addFragment(new FragmentComplain(), "Complain");
         viewPager.setAdapter(adapter);
     }
 
@@ -109,8 +109,6 @@ public class MainActivity extends AppCompatActivity {
                 fab1.hide();
                 break;
             default:
-                fab1.show();
-                fab2.hide();
                 break;
         }
     }

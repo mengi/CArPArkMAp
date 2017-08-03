@@ -11,23 +11,23 @@ import android.view.ViewGroup;
 import com.example.parkingdemo.R;
 import com.example.parkingdemo.util.adapter.RecyclerAdapter;
 
-import java.util.ArrayList;
+import static com.example.parkingdemo.ui.activity.SplashActivity.carParkList;
+
 
 /**
  * Created by ss on 1.8.2017.
  */
 
-public class FrgmntOne extends Fragment {
+public class FragmentMapList extends Fragment {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    ArrayList<String> arrayList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view =  inflater.inflate(R.layout.fragment_one, container, false);
+        View view =  inflater.inflate(R.layout.fragment_map_list, container, false);
 
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
@@ -35,16 +35,10 @@ public class FrgmntOne extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        arrayList = new ArrayList<>();
-
-        arrayList.add(0, "Deneme 0");
-        arrayList.add(1, "Deneme 1");
-        arrayList.add(2, "Deneme 2");
-        arrayList.add(3, "Deneme 3");
-
-        mAdapter = new RecyclerAdapter(arrayList);
+        mAdapter = new RecyclerAdapter(carParkList);
         mRecyclerView.setAdapter(mAdapter);
 
         return view;
     }
+
 }

@@ -10,15 +10,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.parkingdemo.R;
+import com.example.parkingdemo.model.CarPark;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by ss on 1.8.2017.
  */
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
-    private ArrayList<String> mDataset;
+    private List<CarPark> carParkArrayList;
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -37,8 +39,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             mapButton = (ImageButton) view.findViewById(R.id.map_button);
         }
     }
-    public RecyclerAdapter(ArrayList<String> myDataset) {
-        mDataset = myDataset;
+    public RecyclerAdapter(List<CarPark> carParks) {
+        carParkArrayList = carParks;
     }
     @Override
     public RecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
@@ -57,12 +59,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     }
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.cardTitle.setText(mDataset.get(position));
-        holder.cardText.setText(mDataset.get(position));
+        holder.cardTitle.setText(carParkArrayList.get(position).getCarparkingname());
+        holder.cardText.setText(carParkArrayList.get(position).getCapacity());
     }
 
     @Override
     public int getItemCount() {
-        return mDataset.size();
+        return carParkArrayList.size();
     }
 }

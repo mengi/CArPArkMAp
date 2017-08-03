@@ -18,7 +18,6 @@ import retrofit2.http.POST;
 
 public interface CarParkService {
 
-    @FormUrlEncoded
     @GET("getCarParkingInfo.php")
     Call<List<CarPark>> getCarParkAll();
 

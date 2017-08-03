@@ -7,15 +7,60 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.parkingdemo.R;
+import com.example.parkingdemo.model.CarPark;
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import static com.example.parkingdemo.ui.activity.SplashActivity.carParkList;
 
 /**
  * Created by ss on 1.8.2017.
  */
 
-public class FrgmntTwo extends Fragment {
+public class FragmentMap extends Fragment implements OnMapReadyCallback {
+
+    View view;
+    GoogleMap gMap;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_two, container, false);
+
+        view = inflater.inflate(R.layout.fragment_map, container, false);
+
+        init();
+
+        return view;
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        gMap = googleMap;
+        CameraUpdate zoom = CameraUpdateFactory.zoomTo(12);
+
+        for (CarPark carPark : carParkList) {
+            LatLng latLng = new LatLng(Double.valueOf(carPark.getLatitude()), Double.valueOf(carPark.getLongitude()));
+
+            gMap.addMarker(new MarkerOptions()
+                    .position(latLng)
+                    .title(carPark.getCarparkingname())
+                    .icon(BitmapDescriptorFactory
+                            .defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+            gMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        }
+        gMap.animateCamera(zoom);
+
+    }
+
+    private void init() {
+        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
+                .findFragmentById(R.id.map);
+
+        mapFragment.getMapAsync(this);
     }
 }

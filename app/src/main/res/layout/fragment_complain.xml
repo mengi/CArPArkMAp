@@ -138,7 +138,7 @@
                         android:tint="@color/colorAccent" />
 
                     <EditText
-                        android:id="@+id/subjectEditText"
+                        android:id="@+id/messageEditText"
                         style="@style/Base.TextAppearance.AppCompat.Small"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
