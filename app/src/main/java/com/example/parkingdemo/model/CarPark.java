@@ -33,6 +33,10 @@ public class CarPark {
     @SerializedName("longitude")
     @Expose
     private String longitude;
+    @SerializedName("imagepath")
+    @Expose
+
+    private String imagepath;
 
     public String getId() {
         return id;
@@ -96,6 +100,14 @@ public class CarPark {
 
     public void setLongitude(String longitude) {
         this.longitude = longitude;
+    }
+
+    public String getImagepath() {
+        return imagepath;
+    }
+
+    public void setImagepath(String imagepath) {
+        this.imagepath = imagepath;
     }
 
 }

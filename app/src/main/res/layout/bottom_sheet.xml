@@ -28,7 +28,7 @@
                 android:paddingStart="@dimen/md_24dp">
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/textViewCarParkName"
                     style="@style/TextAppearance.AppCompat.Headline"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -45,13 +45,14 @@
                 android:orientation="horizontal"
                 android:padding="@dimen/activity_horizontal_margin">
 
-                <ImageButton
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:alpha="0.36"
-                    app:srcCompat="@drawable/ic_info_outline_black_24dp" />
+                <ImageView
+                    android:layout_width="@dimen/md_24dp"
+                    android:layout_height="@dimen/md_24dp"
+                    app:srcCompat="@drawable/ic_filter_9_plus_black_24dp"
+                    android:tint="@color/colorAccent" />
 
                 <TextView
+                    android:id="@+id/textViewCapacity"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -67,13 +68,14 @@
                 android:orientation="horizontal"
                 android:padding="@dimen/activity_horizontal_margin">
 
-                <ImageButton
+                <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:alpha="0.36"
-                    app:srcCompat="@drawable/ic_info_outline_black_24dp" />
+                    app:srcCompat="@drawable/ic_local_car_wash_black_24dp"
+                    android:tint="@color/colorAccent"/>
 
                 <TextView
+                    android:id="@+id/textViewWashingState"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -89,13 +91,14 @@
                 android:orientation="horizontal"
                 android:padding="@dimen/activity_horizontal_margin">
 
-                <ImageButton
+                <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:alpha="0.36"
-                    app:srcCompat="@drawable/ic_info_outline_black_24dp" />
+                    app:srcCompat="@drawable/ic_access_time_black_24dp"
+                    android:tint="@color/colorAccent"/>
 
                 <TextView
+                    android:id="@+id/textViewTime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/activity_horizontal_margin"
@@ -111,7 +114,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/imageViewPath"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/card_image_height"
                     app:srcCompat="@drawable/tokyo_ghoul" />

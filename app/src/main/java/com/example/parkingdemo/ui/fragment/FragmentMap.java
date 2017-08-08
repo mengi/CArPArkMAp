@@ -60,7 +60,7 @@ public class FragmentMap extends Fragment implements OnMapReadyCallback {
 
     }
 
-    private void init() {
+    private void init( ) {
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
                 .findFragmentById(R.id.map);
 

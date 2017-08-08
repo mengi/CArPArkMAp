@@ -15,6 +15,7 @@ import com.example.parkingdemo.model.CarPark;
 
 import com.example.parkingdemo.ui.activity.DetailActivity;
 import com.example.parkingdemo.ui.activity.MainActivity;
+import com.squareup.picasso.Picasso;
 
 
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
     private List<CarPark> carParkArrayList;
+    private Context context;
 
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -43,24 +45,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             cardText = (TextView) view.findViewById(R.id.card_text);
             infoButton = (ImageButton) view.findViewById(R.id.info_button);
             mapButton = (ImageButton) view.findViewById(R.id.map_button);
-
-            infoButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    context.startActivity(new Intent(context, DetailActivity.class));
-                }
-            });
-
-            mapButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    context.startActivity(new Intent(context, DetailActivity.class));
-                }
-            });
         }
     }
-    public RecyclerAdapter(List<CarPark> carParks) {
-        carParkArrayList = carParks;
+    public RecyclerAdapter(List<CarPark> carParks, Context context) {
+        this.carParkArrayList = carParks;
+        this.context = context;
     }
     @Override
     public RecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,
@@ -78,10 +67,27 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         return viewHolder;
     }
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
 
         holder.cardTitle.setText(carParkArrayList.get(position).getCarparkingname());
         holder.cardText.setText(carParkArrayList.get(position).getCapacity());
+        Picasso.with(context).load(carParkArrayList.get(position).getImagepath()).into(holder.imageView);
+
+        holder.infoButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.startActivity(new Intent(context, DetailActivity.class));
+            }
+        });
+
+        holder.mapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("POSITION", position);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

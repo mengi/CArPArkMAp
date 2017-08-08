@@ -37,7 +37,7 @@ public class FragmentMapList extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new RecyclerAdapter(carParkList);
+        mAdapter = new RecyclerAdapter(carParkList, getContext());
         mRecyclerView.setAdapter(mAdapter);
 
         return view;
